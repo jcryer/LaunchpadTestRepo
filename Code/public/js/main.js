@@ -1,12 +1,12 @@
 $(document).ready(function(){
-    $.get('api/countVal', function(data) {
+    $.get('api/getVal', function(data) {
         let count = JSON.parse(data).count;
 
         $('#button1').html("Count: " + count);
     });
 
     $('#button1').click(function() {
-        $.post('api/increment', {'count': 2}, function(data) {
+        $.post('api/increment', {'count': 1}, function(data) {
             let count = JSON.parse(data).count;
             $('#button1').html("Count: " + count);
         });
@@ -14,6 +14,7 @@ $(document).ready(function(){
 });
 
 /*
+
 $(document).ready(function(){
     var count = 0;
 
@@ -22,4 +23,5 @@ $(document).ready(function(){
         $('#button1').html("Count: " + count);
     });
 });
+
 */
